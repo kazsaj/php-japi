@@ -1,7 +1,11 @@
+// todo: update these
+
 [![Build Status](https://api.travis-ci.org/DocnetUK/php-japi.svg?branch=2.0)](https://travis-ci.org/DocnetUK/php-japi)
 [![Coverage Status](https://coveralls.io/repos/DocnetUK/php-japi/badge.svg?branch=2.0)](https://coveralls.io/r/DocnetUK/php-japi)
 
-# PHP JSON API Library #
+# PHP Single Responsibility Controller Library #
+
+// todo: update the rest of the doc
 
 Version 2 of our library for building HTTP JSON APIs in PHP.
 
