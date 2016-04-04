@@ -3,7 +3,7 @@
 [![Build Status](https://api.travis-ci.org/DocnetUK/php-japi.svg?branch=2.0)](https://travis-ci.org/DocnetUK/php-japi)
 [![Coverage Status](https://coveralls.io/repos/DocnetUK/php-japi/badge.svg?branch=2.0)](https://coveralls.io/r/DocnetUK/php-japi)
 
-# PHP Single Responsibility Controller Library #
+# PHP Single Action Controller Library #
 
 // todo: update the rest of the doc
 

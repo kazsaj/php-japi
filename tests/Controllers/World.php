@@ -1,6 +1,6 @@
 <?php
 namespace Hello;
-class World extends \Docnet\JAPI\Controller
+class World extends \Docnet\SAC\Controller
 {
     public function dispatch(){
         $this->setResponse([

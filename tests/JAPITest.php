@@ -4,7 +4,7 @@ require_once('Controllers/Example.php');
 require_once('Controllers/Exceptional.php');
 require_once('Controllers/Whoops.php');
 
-class JAPITest extends PHPUnit_Framework_TestCase
+class SACTest extends PHPUnit_Framework_TestCase
 {
 
     /**
@@ -18,8 +18,8 @@ class JAPITest extends PHPUnit_Framework_TestCase
         $obj_controller->expects($this->once())->method('dispatch');
         $obj_controller->expects($this->once())->method('postDispatch');
 
-        // Mock JAPI (just replace the sendResponse method to avoid output errors)
-        $obj_japi = $this->getMockBuilder('\\Docnet\\JAPI')->setMethods(['sendResponse'])->getMock();
+        // Mock SAC (just replace the sendResponse method to avoid output errors)
+        $obj_japi = $this->getMockBuilder('\\Docnet\\SAC')->setMethods(['sendResponse'])->getMock();
 
         // Dispatch
         $obj_japi->dispatch($obj_controller);
@@ -36,8 +36,8 @@ class JAPITest extends PHPUnit_Framework_TestCase
         $obj_controller->expects($this->once())->method('dispatch');
         $obj_controller->expects($this->once())->method('postDispatch');
 
-        // Mock JAPI (just replace the sendResponse method to avoid output errors)
-        $obj_japi = $this->getMockBuilder('\\Docnet\\JAPI')->setMethods(['sendResponse'])->getMock();
+        // Mock SAC (just replace the sendResponse method to avoid output errors)
+        $obj_japi = $this->getMockBuilder('\\Docnet\\SAC')->setMethods(['sendResponse'])->getMock();
         $obj_japi->expects($this->once())->method('sendResponse');
 
         // Dispatch
@@ -58,8 +58,8 @@ class JAPITest extends PHPUnit_Framework_TestCase
      */
     public function testBootstrapErrorCycle()
     {
-        // Mock JAPI
-        $obj_japi = $this->getMockBuilder('\\Docnet\\JAPI')->setMethods(['sendResponse', 'jsonError'])->getMock();
+        // Mock SAC
+        $obj_japi = $this->getMockBuilder('\\Docnet\\SAC')->setMethods(['sendResponse', 'jsonError'])->getMock();
         $obj_japi->expects($this->never())->method('sendResponse');
         $obj_japi->expects($this->once())->method('jsonError')->with(
             $this->equalTo(new Exception()),
@@ -75,8 +75,8 @@ class JAPITest extends PHPUnit_Framework_TestCase
      */
     public function testBootstrapCustomErrorCycle()
     {
-        // Mock JAPI
-        $obj_japi = $this->getMockBuilder('\\Docnet\\JAPI')->setMethods(['sendResponse', 'jsonError'])->getMock();
+        // Mock SAC
+        $obj_japi = $this->getMockBuilder('\\Docnet\\SAC')->setMethods(['sendResponse', 'jsonError'])->getMock();
         $obj_japi->expects($this->never())->method('sendResponse');
         $obj_japi->expects($this->once())->method('jsonError')->with(
             $this->equalTo(new RuntimeException('Error Message', 400)),
@@ -92,8 +92,8 @@ class JAPITest extends PHPUnit_Framework_TestCase
      */
     public function testSendResponse()
     {
-        // Mock JAPI
-        $obj_japi = $this->getMockBuilder('\\Docnet\\JAPI')->setMethods(['sendResponse'])->getMock();
+        // Mock SAC
+        $obj_japi = $this->getMockBuilder('\\Docnet\\SAC')->setMethods(['sendResponse'])->getMock();
         $obj_japi->expects($this->once())->method('sendResponse')->with(
             $this->equalTo(['test' => TRUE]),
             $this->equalTo(200)
@@ -114,8 +114,8 @@ class JAPITest extends PHPUnit_Framework_TestCase
             $this->equalTo(\Psr\Log\LogLevel::ERROR)
         );
 
-        // Mock JAPI
-        $obj_japi = $this->getMockBuilder('\\Docnet\\JAPI')->setMethods(['sendResponse'])->getMock();
+        // Mock SAC
+        $obj_japi = $this->getMockBuilder('\\Docnet\\SAC')->setMethods(['sendResponse'])->getMock();
         $obj_japi->setLogger($obj_logger);
 
         // Dispatch
@@ -127,8 +127,8 @@ class JAPITest extends PHPUnit_Framework_TestCase
      */
     public function testNoLogger()
     {
-        // Mock JAPI
-        $obj_japi = $this->getMockBuilder('\\Docnet\\JAPI')->setMethods(['sendResponse'])->getMock();
+        // Mock SAC
+        $obj_japi = $this->getMockBuilder('\\Docnet\\SAC')->setMethods(['sendResponse'])->getMock();
 
         // Dispatch
         $obj_japi->bootstrap(new Exceptional());

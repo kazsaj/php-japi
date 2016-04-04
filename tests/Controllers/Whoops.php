@@ -1,6 +1,6 @@
 <?php
 
-class Whoops extends \Docnet\JAPI\Controller
+class Whoops extends \Docnet\SAC\Controller
 {
     public function dispatch(){
         throw new Exception;

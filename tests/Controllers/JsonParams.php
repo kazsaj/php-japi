@@ -1,6 +1,6 @@
 <?php
 
-class JsonParams extends \Docnet\JAPI\Controller
+class JsonParams extends \Docnet\SAC\Controller
 {
 
     public function dispatch(){

@@ -16,7 +16,7 @@
  */
 
 /**
- * Trivial JAPI bootstrap
+ * Trivial SAC bootstrap
  *
  * @author Tom Walder <tom@docnet.nu>
  */
@@ -27,9 +27,9 @@ require_once(BASE_PATH . '/vendor/autoload.php');
 require_once('Hello.php');
 
 // Demo
-(new \Docnet\JAPI())->bootstrap(function(){
+(new \Docnet\SAC())->bootstrap(function(){
 
-    $obj_router = new \Docnet\JAPI\SolidRouter();
+    $obj_router = new \Docnet\SAC\SolidRouter();
     $obj_router->route('/hello');
 
     $str_controller = $obj_router->getController();

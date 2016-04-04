@@ -16,9 +16,9 @@
  */
 namespace Docnet;
 
-use Docnet\JAPI\Controller;
-use Docnet\JAPI\Exceptions\Routing as RoutingException;
-use Docnet\JAPI\Exceptions\Auth as AuthException;
+use Docnet\SAC\Controller;
+use Docnet\SAC\Exceptions\Routing as RoutingException;
+use Docnet\SAC\Exceptions\Auth as AuthException;
 use Psr\Log\LoggerAwareInterface;
 
 /**
@@ -30,7 +30,7 @@ use Psr\Log\LoggerAwareInterface;
  *
  * @author Tom Walder <tom@docnet.nu>
  */
-class JAPI implements LoggerAwareInterface
+class SAC implements LoggerAwareInterface
 {
 
     use HasLogger;
@@ -112,7 +112,7 @@ class JAPI implements LoggerAwareInterface
             $int_code = 500;
         }
         $this->sendResponse($arr_response, $int_code);
-        $this->getLogger()->error("[JAPI] [{$int_code}] Error: {$str_log_message}");
+        $this->getLogger()->error("[SAC] [{$int_code}] Error: {$str_log_message}");
     }
 
     /**

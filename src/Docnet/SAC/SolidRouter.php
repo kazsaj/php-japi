@@ -14,9 +14,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace Docnet\JAPI;
+namespace Docnet\SAC;
 
-use Docnet\JAPI\Exceptions\Routing;
+use Docnet\SAC\Exceptions\Routing;
 
 /**
  * Router for our revised "Single Action Controller" approach
@@ -152,7 +152,7 @@ class SolidRouter
      *
      * @param string $str_path
      * @param string $str_controller
-     * @return \Docnet\JAPI\SolidRouter
+     * @return \Docnet\SAC\SolidRouter
      */
     public function addRoute($str_path, $str_controller)
     {
@@ -164,7 +164,7 @@ class SolidRouter
      * Set the static routes
      *
      * @param array $arr_routes
-     * @return \Docnet\JAPI\SolidRouter
+     * @return \Docnet\SAC\SolidRouter
      */
     public function setRoutes(Array $arr_routes)
     {

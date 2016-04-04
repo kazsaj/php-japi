@@ -20,7 +20,7 @@
  *
  * @author Tom Walder <tom@docnet.nu>
  */
-class Hello extends \Docnet\JAPI\Controller
+class Hello extends \Docnet\SAC\Controller
 {
 
     /**

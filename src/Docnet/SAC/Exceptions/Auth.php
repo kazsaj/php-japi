@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace Docnet\JAPI\Exceptions;
+namespace Docnet\SAC\Exceptions;
 
 /**
  * Auth Exception
